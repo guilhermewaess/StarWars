@@ -1,0 +1,30 @@
+<template bindable="router">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#starwars-navbar-collapse">
+                <span class="sr-only">Togle navegation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">
+                <i class="fa fa-home"></i>
+                <span>${router.title}</span>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="starwars-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li repeat.for="item of router.navigation" class="${ item.isActive ? 'active' : '' }">
+                    <a href.bind="item.href" data-toggle="collapse" data-taget="starwars-navbar-collapse.in">${ item.title }</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="loader" if.bind="router.isNavegating">
+                    <span>ABC</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</template>

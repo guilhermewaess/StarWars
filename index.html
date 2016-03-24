@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Star Wars</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    
+    <body aurelia-app="./src/main.js">
+        <div class="container">Carregando...</div>
+        
+        <script src="jspm_packages/system.js"></script>
+        <script src="config.js"></script>
+        <script>
+            System.config({
+                "paths": {
+                    "*": "src/*.js"
+                }
+            });
+            System.import('aurelia-bootstrapper');
+        </script>
+        
+    </body>
+    
+</html>
